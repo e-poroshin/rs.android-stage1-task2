@@ -2,6 +2,7 @@ package subtask1
 
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class DateFormatter {
 
@@ -12,7 +13,7 @@ class DateFormatter {
 
         return if (validateDate(intDay, intMonth)) {
             val date = LocalDate.of(intYear, intMonth, intDay)
-            val formatter = DateTimeFormatter.ofPattern("dd MMMM")
+            val formatter = DateTimeFormatter.ofPattern("dd MMMM", Locale.forLanguageTag("ru"))
             val formattedDate = date.format(formatter)
             val intDayWeek = date.dayOfWeek.value
             val dayWeek = getDayOfWeekRussianName(intDayWeek)
